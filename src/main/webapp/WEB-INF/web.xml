@@ -34,6 +34,16 @@
 	</servlet-mapping>
 	
 	<servlet>
+		<servlet-name>cancelupdatecustomer</servlet-name>
+		<servlet-class>com.account.cancelUpdateAccountServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>cancelupdatecustomer</servlet-name>
+		<url-pattern>/upcancel</url-pattern>
+	</servlet-mapping>
+	
+	
+	<servlet>
 		<servlet-name>deletecustomer</servlet-name>
 		<servlet-class>com.account.deleteCustomerServlet</servlet-class>
 	</servlet>
@@ -43,12 +53,14 @@
 	</servlet-mapping>
 	
 	
-	
-	
-	
-	
-	
-	
+	<servlet>
+		<servlet-name>canceldeletecustomer</servlet-name>
+		<servlet-class>com.account.cancelDeleteCustomerServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>canceldeletecustomer</servlet-name>
+		<url-pattern>/delcancel</url-pattern>
+	</servlet-mapping>
 	
 	
 	

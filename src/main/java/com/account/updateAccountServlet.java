@@ -21,15 +21,18 @@ public class updateAccountServlet extends HttpServlet {
 
 		
 		String id = request.getParameter("id");
-		String name = request.getParameter("name");
+		String fname = request.getParameter("fname");
+		String lname = request.getParameter("lname");
 		String email = request.getParameter("email");
 		String phone = request.getParameter("phone");
+		String gender = request.getParameter("gender");
+		String dob = request.getParameter("dob");
 		String username = request.getParameter("uname");
 		String password = request.getParameter("pass");
 		
 		boolean isTrue;
 		
-		isTrue = CustomerDBUtil.updateCustomer(id, name, email, phone, username, password);
+		isTrue = CustomerDBUtil.updateCustomer(id, fname, lname, email, phone,gender, dob, username, password);
 		
 		if (isTrue == true) {
 			
@@ -57,4 +60,8 @@ public class updateAccountServlet extends HttpServlet {
 		
 	}
 
+
 }
+
+
+	

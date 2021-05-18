@@ -3,19 +3,25 @@ package com.account;
 public class Customer {
 	
 	private int id;
-	private String name;
+	private String fname;
+	private String lname;
 	private String email;
 	private String phone;
+	private String gender;
+	private String dob;
 	private String userName;
 	private String password;
 	
 	
-	public Customer(int id, String name, String email, String phone, String userName, String password) {
+	public Customer(int id, String fname, String lname, String email, String phone, String gender, String dob, String userName, String password) {
 
 		this.id = id;
-		this.name = name;
+		this.fname = fname;
+		this.lname = lname;
 		this.email = email;
 		this.phone = phone;
+		this.gender = gender;
+		this.dob = dob;
 		this.userName = userName;
 		this.password = password;
 	}
@@ -26,8 +32,12 @@ public class Customer {
 	}
 
 
-	public String getName() {
-		return name;
+	public String getFname() {
+		return fname;
+	}
+	
+	public String getLname() {
+		return lname;
 	}
 
 
@@ -40,6 +50,13 @@ public class Customer {
 		return phone;
 	}
 
+	public String getGender() {
+		return gender;
+	}
+	
+	public String getDob() {
+		return dob;
+	}
 
 	public String getUserName() {
 		return userName;

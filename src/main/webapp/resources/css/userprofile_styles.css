@@ -1,0 +1,323 @@
+@import url('https://fonts.googleapis.com/css?family=B612');
+@import url('https://fonts.googleapis.com/css2?family=Varela&display=swap');
+
+
+.navdiv
+{
+	margin: auto;
+	
+	margin-left: 0px;
+	margin-right: 90%;
+	
+	
+}
+.navBar
+{
+	list-style-type: none;
+	
+	padding-left: 0px;
+	margin-left: 1px;
+
+	margin-top: 20px;
+	overflow: hidden;
+	background-color: #0000;
+	
+}
+
+.navLi
+{
+	
+	
+	padding-left: 1px;
+	
+}
+
+.navLinks
+{
+	
+	display: block;
+	color:black;
+	border-radius: 20px;
+	text-align: left;
+	font-family: 'B612',sans-serif;
+	
+	text-decoration: none;
+	padding: 14px 1px;
+	
+}
+
+a:hover:not(.active)
+{
+	font-weight: bold;
+}
+.activeacc
+{
+	font-weight: bold;
+}
+
+.section
+{
+	font-family:Verdana, Geneva, Tahoma, sans-serif ;
+	margin: auto;
+
+
+	margin-bottom: 10px;
+}
+
+.l_inputs
+{
+	float:left;
+}
+
+.r_inputs{
+	float:left;
+	margin-left: 100px;
+}
+
+
+.updateformdiv
+{
+	position: absolute ;
+	top: 300px;
+	left: 35%;
+	
+	
+	
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.heading{
+	font-family: 'B612',sans-serif;
+	font-size: 30px;
+	font-weight: bold;
+	text-align: center;
+}
+
+.p_details{
+	position: absolute;
+	top: 150px;
+	left:52%;
+}
+
+.profile
+{
+	
+	position: absolute;
+	width: 200px;
+	height: 100px;
+	top: 100px;
+	left: 40%;
+	
+}
+
+
+.profilepic
+{
+	
+	width: 130px;
+	height: 120px;
+	border-radius: 40%;
+	
+}
+
+.editprofilebtn
+{
+	position: absolute;
+	left: 25%;
+	top: 100%;
+	
+	background-color: transparent;
+	color: #dfdddd;
+	font-size: 12px;
+	font-family: 'Varela',sans-serif;
+	border: none;
+	border-radius: 5px;
+	cursor: pointer;
+	
+}
+.editprofilebtn:hover
+{
+	color : rgb(253, 198, 198);
+}
+
+.modal {
+  display: none; 
+  position: fixed; 
+  z-index: 1; 
+  padding-top: 100px; 
+  left: 0;
+  top: 0;
+  width: 100%; 
+  height: 100%;
+  overflow: auto; 
+  background-color: rgb(0,0,0); 
+  background-color: rgba(0,0,0,0.4); 
+}
+
+.modal-content {
+  background-color: #fefefe;
+  margin: auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 40%;
+  height: 20%;
+}
+
+.close {
+  color: #aaaaaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: #000;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.fontdiv
+{
+	font-family: 'Varela',sans-serif;
+	font-size: 14px;
+	font-weight: bold;
+}
+.formclass
+{
+	position: absolute;
+	left: 45%;
+	top: 55%;
+}
+.rbdiv
+{
+	
+	float:left;
+	padding-right: 50px;
+	
+}
+.sbdiv
+{
+	float: left;
+	
+}
+
+.buttondiv{
+	position:absolute;
+	left :0%;
+	top: 120%; 
+}
+
+.ca_buttondiv{
+	float: left;
+	padding-right: 50px;
+}
+
+.resetbtn
+{
+	background-color: transparent;
+	color: #666666;
+	font-family: 'Varela',sans-serif;
+	font-weight: bold;
+	border: none;
+	cursor: pointer;
+	outline:none;
+	padding: 10px 20px;
+	
+}
+.resetbtn:hover
+{
+	color: black;
+	
+}
+
+.resetbtn:active
+{
+	text-decoration: underline;
+}
+
+
+.submitbtn
+{
+	
+	background-color: #ffae00;
+	color: white;
+	font-family: 'Varela',sans-serif;
+	font-weight: bold;
+	border: none;
+	border-radius: 10px;
+	outline: none;
+	padding: 10px 25px;
+}
+.submitbtn:hover
+{
+	
+	padding: 11px 26px;
+	cursor: pointer;
+}
+.notifclass
+{
+	padding-left: 30%;
+	
+}
+.checkbox
+{
+	padding-right: 50%;
+	float: right;
+}
+
+.membs1
+{
+
+	text-align: center;
+}
+
+.normal
+{
+	font-weight: normal;
+}
+.billform
+{
+	padding-left: 35%;
+}
+.subtopic
+{
+	padding-left: 25%;
+	font-size: 16px;
+}
+.psclass
+{
+	padding-left: 30%;
+	
+}
+.fblinkbtndiv
+{
+	text-align: center;
+}
+
+.fdbkbtndiv
+{
+	text-align: center;
+}
+
+.linkbtn:hover
+{
+	padding: 10px 25px;
+	cursor: pointer;
+	background-color: #66e0ff;
+}

@@ -59,13 +59,16 @@ public class CustomerDBUtil {
 			while (rs.next()) {
 				
 				int id = rs.getInt(1);
-				String name = rs.getString(2);
-				String email = rs.getString(3);
-				String phone = rs.getString(4);
-				String username = rs.getString(5);
-				String password = rs.getString(6);
+				String fname = rs.getString(2);
+				String lname = rs.getString(3);
+				String email = rs.getString(4);
+				String phone = rs.getString(5);
+				String gender = rs.getString(6);
+				String dob = rs.getString(7);
+				String username = rs.getString(8);
+				String password = rs.getString(9);
 				
-				Customer cus = new Customer(id,name,email,phone,username,password);
+				Customer cus = new Customer(id, fname, lname, email,phone, gender, dob, username, password);
 				customer.add(cus);
 			}	
 		} 
@@ -80,14 +83,16 @@ public class CustomerDBUtil {
 	}
 	
 	
-	public static boolean updateCustomer(String id, String name, String email, String phone , String username, String password) {
+	public static boolean updateCustomer(String id, String fname, String lname, String email, String phone , String gender, String dob, String username, String password) {
 		
 		try {
+			
+			//int convertedID = Integer.parseInt(id);
 			
 			con = DBConnect.getConnection();
 			stat = con.createStatement();
 			
-			String sql = "update customer set name='"+name+"', email='"+email+"', phonenumber='"+phone+"', username='"+username+"', password='"+password+"'"
+			String sql = "update customer set fname='"+fname+"', lname='"+lname+"', email='"+email+"', phonenumber='"+phone+"', gender='"+gender+"', dob ='"+dob+"', username='"+username+"', password='"+password+"'"
 					+ " where id='"+id+"'";
 			
 			int rs = stat.executeUpdate(sql);
@@ -127,13 +132,16 @@ public class CustomerDBUtil {
     		
     		while(rs.next()) {
     			int id = rs.getInt(1);
-    			String name = rs.getString(2);
-    			String email = rs.getString(3);
-    			String phone = rs.getString(4);
-    			String username = rs.getString(5);
-    			String password = rs.getString(6);
+    			String fname = rs.getString(2);
+    			String lname = rs.getString(3);
+    			String email = rs.getString(4);
+    			String phone = rs.getString(5);
+    			String gender = rs.getString(6);
+    			String dob = rs.getString(7);
+    			String username = rs.getString(8);
+    			String password = rs.getString(9);
     			
-    			Customer c = new Customer(id,name,email,phone,username,password);
+    			Customer c = new Customer(id,fname, lname, email,phone, gender, dob,username,password);
     			cus.add(c);
     		}
     		
@@ -146,13 +154,13 @@ public class CustomerDBUtil {
     
 	public static boolean deleteCustomer(String Id) {
 		
-		int convertedID = Integer.parseInt(Id);
+		//int convertedID = Integer.parseInt(Id);
 		
 		try {
 			con = DBConnect.getConnection();
 			stat = con.createStatement();
 			
-			String sql = "delete from customer where id = '"+convertedID+"'";
+			String sql = "delete from customer where id = '"+Id+"'";
 			int rs = stat.executeUpdate(sql);
 			
 			if(rs > 0) {

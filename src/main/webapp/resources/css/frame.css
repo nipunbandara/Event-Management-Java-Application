@@ -1,0 +1,140 @@
+html, body {
+  height: 100%;
+  margin: 0;
+  }
+
+* {
+  //box-sizing: border-box;
+}
+
+.logo-img{
+	position:absolute;
+	left: 10px;
+	
+	width: 220px;
+	height: 115px;
+	
+}
+
+/* Style the header */
+header {
+  background-color: DodgerBlue;
+  padding: 10px;
+  text-align: center;
+  font-size: 35px;
+  color: white;
+  font-family: Arial, Helvetica, sans-serif;
+  
+}
+.headerprofile{
+	position: absolute;
+	right: 50px;
+	top: 55px;
+	
+}
+
+.h-profilepic{
+	width: 40px;
+	height: 40px;
+	border-radius: 50%;
+	
+}
+
+/* Create two columns/boxes that floats next to each other */
+.main-nav {
+ 
+  background: #3379FF;
+  
+ 
+  
+}
+
+/* Style the list inside the menu */
+.miannavul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  width: 12%;
+  background-color: DodgerBlue;
+  position:absolute;
+  height: 150%;
+  overflow: auto;
+  font-family: Arial, Helvetica, sans-serif;
+}
+.miannavulspec{
+	 height: 115%;
+}
+.miannavulspec-ps{
+	 height: 125%;
+}
+
+li.miannavlist a {
+  display: block;
+  color: white;
+ 
+  padding: 10px;
+  margin-top: 15px;
+  margin-left: 20px;
+  margin-right: 20px;
+  text-align: center;
+  text-decoration: none;
+  border-radius: 10%;
+
+}
+
+li.miannavlist a:hover {
+  background-color: white;
+  color: blue;
+  padding: 10px 10px;
+}
+
+
+
+
+
+
+
+
+footer {
+  background-color: DodgerBlue;
+ 
+  text-align: center;
+  color: #fff;
+  
+  
+    bottom: 0;
+  
+}
+
+/* Responsive layout - makes the two columns/boxes stack on top of each other instead of next to each other, on small screens */
+
+
+
+/*Footer*/
+
+p.footeroption a {
+  
+  color: #fff;
+  background-color: DodgerBlue;  
+  padding: 2px;
+  text-decoration: none;
+}
+
+p.footeroption a:hover {
+	background-color: DodgerBlue;  
+	color: #fff;
+	padding: 2px;
+	text-decoration: underline;
+}
+
+.f-img{
+	
+	width: 30px;
+	height: 30px; 
+	border-radius: 15%;
+	
+}
+a.fimg-a:hover{
+	
+	background-color: transparent;
+}
