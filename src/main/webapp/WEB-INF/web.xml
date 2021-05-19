@@ -15,6 +15,54 @@
 		<url-pattern>/login</url-pattern>
 	</servlet-mapping>
 	
+	<servlet>
+		<servlet-name>profile</servlet-name>
+		<servlet-class>com.account.loggedinIndexServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>profile</servlet-name>
+		<url-pattern>/directtouseraccount</url-pattern>
+	</servlet-mapping>
+	
+	
+	<servlet>
+		<servlet-name>product</servlet-name>
+		<servlet-class>com.account.productServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>product</servlet-name>
+		<url-pattern>/directtoproduct</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
+		<servlet-name>buyproduct</servlet-name>
+		<servlet-class>com.account.buynowServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>buyproduct</servlet-name>
+		<url-pattern>/buynow</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
+		<servlet-name>chproduct</servlet-name>
+		<servlet-class>com.account.productCheckoutServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>chproduct</servlet-name>
+		<url-pattern>/checkout</url-pattern>
+	</servlet-mapping>
+	
+	
+	<servlet>
+		<servlet-name>canchproduct</servlet-name>
+		<servlet-class>com.account.productCancelCheckoutServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>canchproduct</servlet-name>
+		<url-pattern>/checkoutcancel</url-pattern>
+	</servlet-mapping>
+	
+	
     <servlet>
     	<servlet-name>customerinsert</servlet-name>
     	<servlet-class>com.account.CustomerInsert</servlet-class>

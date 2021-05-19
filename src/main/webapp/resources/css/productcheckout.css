@@ -1,0 +1,77 @@
+.orderp{
+	position : absolute;
+	
+	left : 50%;
+	top : 20%;
+	
+}
+
+
+.paydiv{
+	
+	float: left;	
+	padding-right: 90px;
+	padding-top: 10px;
+	
+}
+
+.cancpaydiv{
+	
+	
+	
+	float:left;
+}
+
+.cancelpaytbtn{
+	background-color: transparent;
+	color: #666666;
+	font-family: 'Varela',sans-serif;
+	font-weight: bold;
+	border: none;
+	cursor: pointer;
+	outline:none;
+	
+	
+}
+.cancelpaytbtn:hover{
+	color: black;
+	
+}
+
+.paybtn{
+	
+	background-color: #d3d3d3;
+	border-radius: 10px;
+	outline: none;
+	padding: 10px 25px;
+	border: none;
+	color: #B8860B;
+	font-family: 'Varela',sans-serif;
+	font-weight: bold;
+	border: none;
+	cursor: pointer;
+	outline:none;
+}
+
+.paybtn:hover{
+	
+	color: #b85b0b;
+}
+
+.cart2{
+	
+	padding-left: 90px;
+	
+}
+
+.btndiv51{
+	
+	padding-top: 20px;
+	padding-left: 300px;
+}
+
+.success{
+	
+	
+	
+}

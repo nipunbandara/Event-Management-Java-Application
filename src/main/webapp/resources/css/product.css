@@ -1,0 +1,249 @@
+
+@import url('https://fonts.googleapis.com/css?family=Rajdhani:300,400,500,600,700');
+@import url('https://fonts.googleapis.com/css?family=Poppins:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i');
+
+
+@import url(animate.min.css);
+@import url(normalize.css);
+@import url(meanmenu.css);
+@import url(owl.carousel.min.css);
+@import url(slick.css);
+@import url(jquery-ui.css);
+@import url(nice-select.css);
+
+/** product **/
+.product {
+    padding: 0 0 30px;
+    
+}
+
+.product_style_3 .product_img {
+    float: left;
+    width: 100%;
+    min-height: 370px;
+    padding: 25px;
+    position: relative;
+    background: #f3f3f3;
+    display: flex;
+    align-items: center;
+}
+
+
+.product_style_3 .overlay_hover {
+    top: 0;
+    border-radius: 0;
+}
+.overlay_hover {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: rgba(255, 255, 255, .8);
+    border-radius: 10px;
+    transition: ease all 0.5s;
+    opacity: 0;
+    visibility: hidden;
+    top: 0;
+}
+
+.product:hover .overlay_hover, .product:focus .overlay_hover {
+    opacity: 1;
+    visibility: visible;
+}
+
+
+.add-bt {
+    min-width: 130px;
+    text-align: center;
+    background: #fff;
+    height: 45px;
+    line-height: 46px;
+    color: #0fbbad;
+    text-transform: uppercase;
+    font-weight: 500;
+    font-size: 13px;
+    box-shadow: 0 0 10px -8px #000;
+    border-radius: 5px;
+    padding: 0 20px;
+}
+.add-bt:hover {color: #000;}
+.light_red .add-bt {
+    background: #ff9999;
+    color: #fff;
+}
+.product_style_3 .product_detail {
+    background: #fff;
+    border: solid #e1e1e1 1px;
+    width: 80%;
+    margin: -40px 10% 0;
+    position: relative;
+}
+.product_detail {
+    float: left;
+    width: 100%;
+    padding: 20px 5px;
+}
+.product_style_3 .product_img .center img {height: 250px;}
+.text_align_center {
+    text-align: center;
+}
+
+.light_red .product_price {
+    color: #ff9999;
+}
+.product_price {
+    font-size: 18px;
+    font-weight: 600;
+    color: #0fbbad;
+    margin: 0;
+
+}
+
+.old_price {
+    text-decoration: line-through;
+    font-weight: 400;
+    font-size: 14px;
+    color: #707070;}
+.product_style_3 .product_descr {
+    margin: 5px 0 0;
+    padding: 0 10px;
+    line-height: 18px;
+    color: #000;
+    font-weight: 400;
+
+}
+.tab_bar_section ul.nav.nav-tabs li a:hover {color: #0fbbad;}
+
+
+
+/** product_detail3 **/
+.layout_padding-2 {margin: 90px 0px 45px 0px;} 
+
+.abotext_box{
+	
+position: absolute;
+
+left:55%;
+top : 30%;	
+	
+	
+}
+
+.img_box {
+border: solid #ddd 3px;
+width: 50%;
+
+display: flex;
+flex-wrap: wrap;
+justify-content: center;
+padding: 10px 10px;
+
+
+}
+
+.cart .quantity {
+    float: left;
+    margin-top: 20px;
+}
+
+.cart button {
+    margin-left: 30px;
+    margin-top: 22px;
+    transition: ease all 0.5s;
+	
+	
+}
+
+.input-text.qty.text {
+    background: #fff;
+    padding: 5px 10px 5px 15px;
+    border: solid #ccc 1px;
+    font-size: 20px;
+    font-weight: 400;
+    width: 65px;
+    color: #272727;
+    border-radius: 0;
+}
+
+.buynow{
+	float : left;
+	
+}
+
+.buynowbtn{
+	background-color: white;
+	color: black;
+	cursor:pointer;
+	padding: 6px 10px;
+	border-radius: 12px;
+	transition-duration: 0.4s;
+	
+}
+
+.buynowbtn:hover{
+	background-color: #e7e7e7;
+	
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+.product_style_3 {
+    margin: 90px 0px 60px 0px;
+}
+
+.product_detail_side {margin-top: 10px;}
+.product-heading {
+    text-align: left;
+    border-bottom: 1px solid #f0f0f0;
+}
+.product-heading h2 {
+    font-size: 28px;
+    color: #181818;
+    padding-bottom: 23px;
+    margin: 0;
+    font-weight: 500;
+}
+
+.product-detail-side {
+    border-bottom: 1px solid #f0f0f0;
+    text-align: left;
+    padding: 15px 0;
+}
+
+.product-detail-side span {
+    font-size: 24px;
+    font-weight: 300;
+    margin-right: 15px;
+}
+.product-detail-side span.new-price {
+    color: #222;
+    font-weight: 400;
+}
+.product-detail-side span.rating {
+    margin-right: 5px;
+}
+.rating i {
+    color: #eabe12;
+    font-size: 18px;
+    margin: 0 -2px;
+}
+.rating i {
+    color: #eabe12;
+    font-size: 18px;
+
+}
+.product-detail-side span.review {
+    font-size: 13px;
+}

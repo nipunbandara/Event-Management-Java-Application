@@ -208,7 +208,7 @@ Licence URI: https://www.os-templates.com/template-terms
       
       </div>
       <div class = "p_details">
-        <%= fname%> <%= lname%>
+         <div style = "font-weight: bold;"><%= fname%> <%= lname%></div>
        <p style="font-size: small;"> <%= userName%></p>
       </div>
 	
@@ -249,7 +249,7 @@ Licence URI: https://www.os-templates.com/template-terms
 	      	<input type = "text" name = "phone" pattern = "[0-9]{10}" value = "<%= phone%>" readonly><br>
 
             <label for="gender">Gender :</label>
-            <p name = "gender"><td><%=gender %></td></p>
+            <p><td><%=gender %></td></p>
           </div>
          
           

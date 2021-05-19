@@ -182,4 +182,37 @@ public class CustomerDBUtil {
 		return isSuccess;
 	}
 	
+	
+public static boolean insertOder(String userid,String productid,String price,String total,String qty,String paymentm){
+		
+		try {
+			
+						
+			con = DBConnect.getConnection();
+			stat = con.createStatement();
+			
+			String sql = "insert into eventmanagement.order values(0, '"+userid+"', '"+productid+"', '"+price+"', '"+total+"', '"+qty+"', '"+paymentm+"')" ;
+			
+			int rs = stat.executeUpdate(sql);
+			
+			if(rs > 0) {
+				isSuccess = true;
+				
+			}
+			
+			else {
+				isSuccess = false;
+			
+			}
+		
+		}
+		
+		catch(Exception e) {
+			e.printStackTrace();
+		}
+		
+		return isSuccess;
+	}
+	
+	
 }

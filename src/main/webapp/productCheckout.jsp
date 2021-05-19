@@ -1,11 +1,13 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
-    
-     <%@ taglib uri = "http://java.sun.com/jsp/jstl/core" prefix = "c" %>
+
+
+  <%@ taglib uri = "http://java.sun.com/jsp/jstl/core" prefix = "c" %>
     <%@taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
 <c:set var="req" value="${pageContext.request}" />
 <c:set var="uri" value="${req.requestURI}" />
 <c:set var="url">${req.requestURL}</c:set>
+
 
 <!DOCTYPE html>
 <!--
@@ -19,40 +21,17 @@ Licence URI: https://www.os-templates.com/template-terms
 <html lang="">
 <!-- To declare your language - read more here: https://www.w3.org/International/questions/qa-html-language-declarations -->
 <head>
-   <meta charset="ISO-8859-1">
-<title>Update Profile</title>
+<title>Checkout</title>
+<meta charset="ISO-8859-1">
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 <link href="resources/layout/styles/layout2.css" rel="stylesheet" type="text/css" media="all">
-<link rel = "stylesheet" href = "resources/css/userprofile_styles.css"/>
-
+<link href="resources/css/productcheckout.css" rel="stylesheet" type="text/css" media="all">
+<link rel="stylesheet" href="https://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.css" media="screen">
 </head>
 <body id="top">
 <!-- ################################################################################################ -->
-<!--
-          fname
-          lname
-           id removed from form
-          email type changed to email
-          gender
-          dob
-        add cancel submit button redirect to the user profile  page
-        -->
-
-  <%
-		
-		String id = request.getParameter("id");
-		String fname = request.getParameter("fname");
-    String lname = request.getParameter("lname");
-		String email = request.getParameter("email");
-		String phone = request.getParameter("phone");
-    String gender = request.getParameter("gender");
-    String dob = request.getParameter("dob");
-		String userName = request.getParameter("uname");
-		String password = request.getParameter("pass");
-		
-		
-	%>
 <!-- ################################################################################################ -->
 <!-- ################################################################################################ -->
 <!-- Top Background Image Wrapper -->
@@ -101,7 +80,7 @@ Licence URI: https://www.os-templates.com/template-terms
   <!-- ################################################################################################ -->
   <div class="wrapper row1">
     <header id="header" class="hoc clear">
-     
+      
       <nav id="mainav" class="fl_right"> 
         <!-- ################################################################################################ -->
         <ul class="clear">
@@ -166,7 +145,11 @@ Licence URI: https://www.os-templates.com/template-terms
 	  
     </header>
   </div>
- 
+  <!-- ################################################################################################ -->
+  <!-- ################################################################################################ -->
+  <!-- ################################################################################################ -->
+  
+  <!-- ################################################################################################ -->
 </div>
 <!-- End Top Background Image Wrapper -->
 <!-- ################################################################################################ -->
@@ -180,123 +163,109 @@ Licence URI: https://www.os-templates.com/template-terms
     <!-- ################################################################################################ -->
    
     <!-- ################################################################################################ -->
-    <section id="overview">
-      <div class="sectiontitle">
-        <p class="nospace font-xs"></p>
-        <p class="heading underline font-x2"></p>
-      </div>   
-    </section>
+    
+    
+    <c:forEach var = "od" items = "${odDetails}">
+	
+	<c:set var = "userid" value = "${od.userid}"/>
+	<c:set var = "productid" value = "${od.productid}"/>
+ 	 <c:set var = "qty" value = "${od.qty}"/>
+	<c:set var = "price" value = "${od.price }"/>
+	<c:set var = "total" value = "${od.total }"/>
+ 
+ 
+ 	
+ 
+    
+ 
+	
+	
+<ul><u>	<h1>Select Payment Method</h1></u></ul>
+	
+	
+	
+	
+	  <div class="">
+                        
+                        <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 product_detail_side">
+                            <div class="abotext_box">
+                                <div class="product-heading">
+                                    <h2><br><br></h2>
+                                </div>
+                                <div class="product-detail-side">
+                                    
+                                    <form class="cart cart2" method="post" action="checkout checkoutcancel">
+                                    
+                                   	<input type = "hidden" name = "userid"  value = "${od.userid }"/>
+     							      <input type = "hidden" name = "productid"  value = "${od.productid }"/>
+     							      <input type = "hidden" name = "price"  value = "${od.price }"/>
+     							      <input type = "hidden" name = "total"  value = "${od.total }"/>
+     							      <input type = "hidden" name = "qty"  value = "${od.qty }"/>
+     							      
+     							      
+                                       <label for = "paymentm">Payment Methods :</label>
+									
+										<label for="card1"><input style = "float: left;" type="radio" id="card1" name="paymentm" value="cc01" checked >Credit Card (xxxxxxxx862)</label>
+										<label for="card2"> <input style = "float: left;" type="radio" id="card2" name="paymentm" value="cc02">Credit Card (xxxxxxxx463)</label>
+										<label for="cod"><input style = "float: left;" type="radio" id="cod" name="paymentm" value="cod">Cash On Delivery</label>
+										<label for="bank"><input style = "float: left;" type="radio" id="bank" name="paymentm" value="bank">Bank Transfer</label>
+										<br><br><br><br><br>
+										<div class = "btndiv51">
+										<div class = "paydiv"><input type = "submit" class = "cancelpaytbtn" id = "cancel" formaction = "checkoutcancel" value = "Cancel"></div>
+										<div class = "cancpaydiv"><input type = "submit" class = "paybtn" id = "submit" formaction = "checkout" value = "Confirm Order"></div>
+										</div>
+                                    </form>
+                                    
+                                </div>
+                                <div class="detail-contant">
+                                    <p>
+                                        <br><span class="stock"></span>
+                                    </p>
+                                    
+                                </div>
+                            </div>
+							<div class = "orderp">
+							<br><br>
+							<h6>Products</h6>
+							<p>
+							Product name :&emsp; Festoon Lighting 10 Metres 	&emsp;&emsp;Qty : 	<c:out value = "${od.qty}"/>	&emsp;&emsp;&emsp;&emsp;Price : $ <c:out value = "${od.price}"/>
+							<br></p>
+							<br>
+							<p><h2>Total &emsp;	&emsp;&emsp;: $<c:out value = "${od.total}"/>	</h2></p>
+							</div>
+                        </div>
+                    </div>
+	</c:forEach>
+ 
+	
+	
+	
+	
+	
+	
+	 <c:url value = "productCheckoutSuccess.jsp" var = "cusupdate" >
+	
+		    <c:param name = "userid" value = "${userid }"/>
+		    <c:param name = "productid" value = "${productid }"/>
+        <c:param name = "qty" value = "${qty }"/>
+		    <c:param name = "price" value = "${price }"/>
+		    <c:param name = "total" value = "${total }"/>
+		
+	
+    	</c:url>
+    
+	
+	
+	
+	
+	
+	
+	
     <!-- ################################################################################################ -->
     <!-- / main body -->
-	
-		<ul class = "navBar">
-		<div class="navdiv">
-			<li class = "navLi"><a class = "navLinks hover activeacc" href = "EditProfile.html">Edit Profile</a></li>
-			<li class = "navLi"><a class = "navLinks hover " href = "NotificationSettings.html">Address Book</a></li>
-			<li class = "navLi"><a class = "navLinks hover " href = "MembershipSettings.html">Payment Details</a></li>
-			<li class = "navLi"><a class = "navLinks hover " href = "BillingSettings.html">Ordered History</a></li>
-			<li class = "navLi"><a class = "navLinks hover " href = "PrivacySettings.html">Inquaries</a></li>
-		</div>
-		</ul>
-
-      <div class = "profile">
-      <image class = "profilepic" src = "resources/images/demo/profilepic.jpg" alt = "profile_picture" >
-      <button class = "editprofilebtn" id = "editprof" onclick = "edpbtn()">Edit</button>
-      <div id = "myModal" class = "modal">
-  
-        <div class = "modal-content">
-        <span class = "close">&times;</span>
-        <label for="profilepic">Select a picture :</label><br><br>
-        <input type="file" id="profilepic" name="profilepic"><br><br>
-        <input type="submit">
-        </div>
-      </div>
-
-      
-      </div>
-      <div class = "p_details">
-      <div style = "font-weight: bold;"><%= fname%> <%= lname%></div>
-       <p style="font-size: small;"> <%= userName%> </p>
-      </div>
-	
-	    <div class = "secton">
-
-        <br>
-	
-        
-	  	<div class = "updateformdiv">
-			
-	      <form action = "update upcancel" method = "post">
-	      
-	       <input type = "hidden" name = "id"  value = "<%= id %>"/>
-          
-          <label for = "uname">User Name</label>
-          <input type = "text" name = "uname" value = "<%= userName%>"><br>
-
-          <div class= "l_inputs">
-	      	<label for = "fname"> First Name </label>
-          <input  type = "text" name = "fname" value = "<%= fname%>"><br>
-         
-          
-          <label for = "email">Email</label>
-          <input type = "email" name = "email" value = "<%= email%>"><br>
-
-          <label for = "dob">Date of Birth</label>
-          <input type = "date" name = "dob" value = "<%= dob%>"><br>
-
-          <label for = "pass">Password</label>
-	      	<input type = "password" name = "pass" value = "<%= password%>"><br>
-
-          </div>
-
-          <div class = "r_inputs">
-          <label  for = "lname"> Last Name </label>
-          <input  type = "text" name="lname" value="<%= lname%>"><br>
-          <label for = "phone">Phone</label>
-	      	<input type = "text" name = "phone" pattern = "[0-9]{10}" value = "<%= phone%>"><br>
-			
-			
-	
-				<c:set var = "gender1" value = "<%=gender %>"/>	
-			
-			
-          <label for="gender">Gender</label>
-          <label for="male"><input style = "float: left;" type="radio" id="male" name="gender" value="Male" <c:if test="${gender1=='Male'}">checked</c:if>>Male</label>
-          <label for="female"> <input style = "float: left;" type="radio" id="female" name="gender" value="Female"<c:if test="${gender1=='Female'}">checked</c:if>>Female</label>
-          <label for="other"><input style = "float: left;" type="radio" id="other" name="gender" value="Other"<c:if test="${gender1=='Other'}">checked</c:if>>Other</label>
-
-          </div>
-         
-          <div class = "buttondiv">
-			<div class = "rbdiv"><input type = "submit" class = "resetbtn" id = "cancel" formaction = "upcancel" value = "Cancel"></div>
-		   	<div class = "sbdiv"><input type = "submit" class = "submitbtn" id = "submit" formaction = "update" value = "Save Profile"></div>
-	      </div>
-
-          
-    	  </form>
-	
-      
-		  </div>
-	   
-        
-      
-      
-	
-	
-	    </div>
-	
-	
-      <p> 
-        <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br>
-      </p>
-	
     <div class="clear"></div>
-  
-    <br><br>
   </main>
 </div>
-
-
 <!-- ################################################################################################ -->
 <!-- ################################################################################################ -->
 <!-- ################################################################################################ -->

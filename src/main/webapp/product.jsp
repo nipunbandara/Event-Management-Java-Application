@@ -1,11 +1,12 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
-    
-     <%@ taglib uri = "http://java.sun.com/jsp/jstl/core" prefix = "c" %>
+  <%@ taglib uri = "http://java.sun.com/jsp/jstl/core" prefix = "c" %>
     <%@taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
 <c:set var="req" value="${pageContext.request}" />
 <c:set var="uri" value="${req.requestURI}" />
 <c:set var="url">${req.requestURL}</c:set>
+
+
 
 <!DOCTYPE html>
 <!--
@@ -19,40 +20,18 @@ Licence URI: https://www.os-templates.com/template-terms
 <html lang="">
 <!-- To declare your language - read more here: https://www.w3.org/International/questions/qa-html-language-declarations -->
 <head>
-   <meta charset="ISO-8859-1">
-<title>Update Profile</title>
+<title>Product</title>
 <meta charset="utf-8">
+<meta charset="ISO-8859-1">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 <link href="resources/layout/styles/layout2.css" rel="stylesheet" type="text/css" media="all">
-<link rel = "stylesheet" href = "resources/css/userprofile_styles.css"/>
-
+<link href="resources/css/product.css" rel="stylesheet" type="text/css" media="all">
+<link rel="stylesheet" href="https://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.css" media="screen">
+<script src="resources/assets/js/prod.js"></script>
 </head>
 <body id="top">
 <!-- ################################################################################################ -->
-<!--
-          fname
-          lname
-           id removed from form
-          email type changed to email
-          gender
-          dob
-        add cancel submit button redirect to the user profile  page
-        -->
-
-  <%
-		
-		String id = request.getParameter("id");
-		String fname = request.getParameter("fname");
-    String lname = request.getParameter("lname");
-		String email = request.getParameter("email");
-		String phone = request.getParameter("phone");
-    String gender = request.getParameter("gender");
-    String dob = request.getParameter("dob");
-		String userName = request.getParameter("uname");
-		String password = request.getParameter("pass");
-		
-		
-	%>
 <!-- ################################################################################################ -->
 <!-- ################################################################################################ -->
 <!-- Top Background Image Wrapper -->
@@ -101,7 +80,47 @@ Licence URI: https://www.os-templates.com/template-terms
   <!-- ################################################################################################ -->
   <div class="wrapper row1">
     <header id="header" class="hoc clear">
+    
+    
+    
+      <c:forEach var = "cus" items = "${cusDetails}">
+	
+	<c:set var = "id" value = "${cus.id}"/>
+	<c:set var = "fname" value = "${cus.fname}"/>
+ 	 <c:set var = "lname" value = "${cus.lname}"/>
+	<c:set var = "email" value = "${cus.email }"/>
+	<c:set var = "phone" value = "${cus.phone }"/>
+  <c:set var = "gender" value = "${cus.gender }"/>
+  <c:set var = "dob" value = "${cus.dob }"/>
+	<c:set var = "username" value = "${cus.userName }"/>
+	<c:set var = "password" value = "${cus.password }"/>
+      
+     </c:forEach>
      
+      <c:url value = "updateAccount.jsp" var = "cusupdate" >
+	
+		    <c:param name = "id" value = "${id }"/>
+		    <c:param name = "fname" value = "${fname }"/>
+        <c:param name = "lname" value = "${lname }"/>
+		    <c:param name = "email" value = "${email }"/>
+		    <c:param name = "phone" value = "${phone }"/>
+        <c:param name = "gender" value = "${gender }"/>
+        <c:param name = "dob" value = "${dob }"/>
+		    <c:param name = "uname" value = "${username }"/>
+		    <c:param name = "pass" value = "${password }"/>
+		
+	
+    	</c:url>
+    
+    
+    
+    
+  
+     <form id = "profilef" action = "directtouseraccount" method = "post">
+           <input type = "hidden" name = "id"  value = "${id }"/>
+          
+  
+      
       <nav id="mainav" class="fl_right"> 
         <!-- ################################################################################################ -->
         <ul class="clear">
@@ -160,13 +179,18 @@ Licence URI: https://www.os-templates.com/template-terms
           <li><a href="#">Portfolio</a></li>
           <li><a href="#">Contact Us</a></li>
           <li><a href="#">About Us</a></li>
+          <li><a href = "javascript:profilefjs()" >Profile</a></li>
         </ul>
         <!-- ################################################################################################ -->
       </nav>
-	  
+	 </form>  
     </header>
   </div>
- 
+  <!-- ################################################################################################ -->
+  <!-- ################################################################################################ -->
+  <!-- ################################################################################################ -->
+  
+  <!-- ################################################################################################ -->
 </div>
 <!-- End Top Background Image Wrapper -->
 <!-- ################################################################################################ -->
@@ -180,123 +204,123 @@ Licence URI: https://www.os-templates.com/template-terms
     <!-- ################################################################################################ -->
    
     <!-- ################################################################################################ -->
-    <section id="overview">
-      <div class="sectiontitle">
-        <p class="nospace font-xs"></p>
-        <p class="heading underline font-x2"></p>
-      </div>   
-    </section>
+ 
+ 
+ 
+ 
+ 
+     <c:forEach var = "cus" items = "${cusDetails}">
+	
+	<c:set var = "id" value = "${cus.id}"/>
+	<c:set var = "fname" value = "${cus.fname}"/>
+ 	 <c:set var = "lname" value = "${cus.lname}"/>
+	<c:set var = "email" value = "${cus.email }"/>
+	<c:set var = "phone" value = "${cus.phone }"/>
+  <c:set var = "gender" value = "${cus.gender }"/>
+  <c:set var = "dob" value = "${cus.dob }"/>
+	<c:set var = "username" value = "${cus.userName }"/>
+	<c:set var = "password" value = "${cus.password }"/>
+      
+     </c:forEach>
+     
+      <c:url value = "productCheckout.jsp" var = "checkout" >
+	
+		    <c:param name = "id" value = "${id }"/>
+		    <c:param name = "fname" value = "${fname }"/>
+        <c:param name = "lname" value = "${lname }"/>
+		    <c:param name = "email" value = "${email }"/>
+		    <c:param name = "phone" value = "${phone }"/>
+        <c:param name = "gender" value = "${gender }"/>
+        <c:param name = "dob" value = "${dob }"/>
+		    <c:param name = "uname" value = "${username }"/>
+		    <c:param name = "pass" value = "${password }"/>
+		    
+	
+    	</c:url>
+    	
+    
+ 
+ 
+ 
+ 
+ 
+	
+	
+	<h5><ul><li>Lighting</li></ul></h5>
+	
+	
+	
+	
+	  <div class="">
+                        <div class="">
+                            <div class="img_box">
+                                <figure><img src="resources/images/demo/product1.jpg" alt="#" /></figure>
+                            </div>
+                        </div>
+                        <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 product_detail_side">
+                            <div class="abotext_box">
+                                <div class="product-heading">
+                                    <h2>Festoon Lighting 10 metres</h2>
+                                </div>
+                                <div class="product-detail-side">
+                                    <span><del>$45.00</del></span><span class="new-price">$37.30</span>
+                                    <span class="rating">
+									<i class="fa fa-star" aria-hidden="true"></i>
+									<i class="fa fa-star" aria-hidden="true"></i>
+									<i class="fa fa-star" aria-hidden="true"></i>
+									<i class="fa fa-star" aria-hidden="true"></i>
+									<i class="fa fa-star-o" aria-hidden="true"></i>
+									</span>
+                                    <span class="review">(35 customer review)</span>
+                                </div>
+                                <div class="detail-contant">
+                                    <p>
+                                        <br><span class="stock">include LED bulbs</span>
+                                    </p>
+                                    <form class="cart" method="post" action="buynow">
+                                      <input type = "hidden" name = "userid"  value = "${id }"/>
+     							      <input type = "hidden" name = "productid"  value = "L0069"/>
+     							      <input type = "hidden" name = "price"  value = "37.30"/>
+          							
+                                    
+                                        <div class="quantity">
+                                            <input step="1" min="1" max="20" name="quantity" value="1" title="Qty" class="input-text qty text" type="number">
+                                        </div>
+										<div class = "buynow">
+                                        <button class = "buynowbtn" type="submit" name = "submit" class="bt_main">Buy Now</button>
+										</div>
+                                    </form>
+                                </div>
+                            </div>
+							
+							<br><br>
+							<h6>product details</h6>
+							<p>
+							This product set is a warm whites bulb set that can cover upto 10 metres
+							<br>A set of LED bulbs are included
+							<br>
+							</p>
+                        </div>
+                    </div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
     <!-- ################################################################################################ -->
     <!-- / main body -->
-	
-		<ul class = "navBar">
-		<div class="navdiv">
-			<li class = "navLi"><a class = "navLinks hover activeacc" href = "EditProfile.html">Edit Profile</a></li>
-			<li class = "navLi"><a class = "navLinks hover " href = "NotificationSettings.html">Address Book</a></li>
-			<li class = "navLi"><a class = "navLinks hover " href = "MembershipSettings.html">Payment Details</a></li>
-			<li class = "navLi"><a class = "navLinks hover " href = "BillingSettings.html">Ordered History</a></li>
-			<li class = "navLi"><a class = "navLinks hover " href = "PrivacySettings.html">Inquaries</a></li>
-		</div>
-		</ul>
-
-      <div class = "profile">
-      <image class = "profilepic" src = "resources/images/demo/profilepic.jpg" alt = "profile_picture" >
-      <button class = "editprofilebtn" id = "editprof" onclick = "edpbtn()">Edit</button>
-      <div id = "myModal" class = "modal">
-  
-        <div class = "modal-content">
-        <span class = "close">&times;</span>
-        <label for="profilepic">Select a picture :</label><br><br>
-        <input type="file" id="profilepic" name="profilepic"><br><br>
-        <input type="submit">
-        </div>
-      </div>
-
-      
-      </div>
-      <div class = "p_details">
-      <div style = "font-weight: bold;"><%= fname%> <%= lname%></div>
-       <p style="font-size: small;"> <%= userName%> </p>
-      </div>
-	
-	    <div class = "secton">
-
-        <br>
-	
-        
-	  	<div class = "updateformdiv">
-			
-	      <form action = "update upcancel" method = "post">
-	      
-	       <input type = "hidden" name = "id"  value = "<%= id %>"/>
-          
-          <label for = "uname">User Name</label>
-          <input type = "text" name = "uname" value = "<%= userName%>"><br>
-
-          <div class= "l_inputs">
-	      	<label for = "fname"> First Name </label>
-          <input  type = "text" name = "fname" value = "<%= fname%>"><br>
-         
-          
-          <label for = "email">Email</label>
-          <input type = "email" name = "email" value = "<%= email%>"><br>
-
-          <label for = "dob">Date of Birth</label>
-          <input type = "date" name = "dob" value = "<%= dob%>"><br>
-
-          <label for = "pass">Password</label>
-	      	<input type = "password" name = "pass" value = "<%= password%>"><br>
-
-          </div>
-
-          <div class = "r_inputs">
-          <label  for = "lname"> Last Name </label>
-          <input  type = "text" name="lname" value="<%= lname%>"><br>
-          <label for = "phone">Phone</label>
-	      	<input type = "text" name = "phone" pattern = "[0-9]{10}" value = "<%= phone%>"><br>
-			
-			
-	
-				<c:set var = "gender1" value = "<%=gender %>"/>	
-			
-			
-          <label for="gender">Gender</label>
-          <label for="male"><input style = "float: left;" type="radio" id="male" name="gender" value="Male" <c:if test="${gender1=='Male'}">checked</c:if>>Male</label>
-          <label for="female"> <input style = "float: left;" type="radio" id="female" name="gender" value="Female"<c:if test="${gender1=='Female'}">checked</c:if>>Female</label>
-          <label for="other"><input style = "float: left;" type="radio" id="other" name="gender" value="Other"<c:if test="${gender1=='Other'}">checked</c:if>>Other</label>
-
-          </div>
-         
-          <div class = "buttondiv">
-			<div class = "rbdiv"><input type = "submit" class = "resetbtn" id = "cancel" formaction = "upcancel" value = "Cancel"></div>
-		   	<div class = "sbdiv"><input type = "submit" class = "submitbtn" id = "submit" formaction = "update" value = "Save Profile"></div>
-	      </div>
-
-          
-    	  </form>
-	
-      
-		  </div>
-	   
-        
-      
-      
-	
-	
-	    </div>
-	
-	
-      <p> 
-        <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br>
-      </p>
-	
     <div class="clear"></div>
-  
-    <br><br>
   </main>
 </div>
-
-
 <!-- ################################################################################################ -->
 <!-- ################################################################################################ -->
 <!-- ################################################################################################ -->

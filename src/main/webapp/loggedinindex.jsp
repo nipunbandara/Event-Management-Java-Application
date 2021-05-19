@@ -26,6 +26,8 @@ Licence URI: https://www.os-templates.com/template-terms
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 <link href="resources/layout/styles/layout.css" rel="stylesheet" type="text/css" media="all">
 <link rel="stylesheet" type="text/css" href="resources/layout/scripts/screen.css"/>
+<script src="resources/assets/js/prod.js"></script>
+
 </head>
 <body id="top">
 <!-- ################################################################################################ -->
@@ -76,6 +78,41 @@ Licence URI: https://www.os-templates.com/template-terms
         
         <!-- ################################################################################################ -->
       </div>
+      
+      <c:forEach var = "cus" items = "${cusDetails}">
+	
+	<c:set var = "id" value = "${cus.id}"/>
+	<c:set var = "fname" value = "${cus.fname}"/>
+ 	 <c:set var = "lname" value = "${cus.lname}"/>
+	<c:set var = "email" value = "${cus.email }"/>
+	<c:set var = "phone" value = "${cus.phone }"/>
+  <c:set var = "gender" value = "${cus.gender }"/>
+  <c:set var = "dob" value = "${cus.dob }"/>
+	<c:set var = "username" value = "${cus.userName }"/>
+	<c:set var = "password" value = "${cus.password }"/>
+      
+     </c:forEach>
+     
+      <c:url value = "updateAccount.jsp" var = "cusupdate" >
+	
+		    <c:param name = "id" value = "${id }"/>
+		    <c:param name = "fname" value = "${fname }"/>
+        <c:param name = "lname" value = "${lname }"/>
+		    <c:param name = "email" value = "${email }"/>
+		    <c:param name = "phone" value = "${phone }"/>
+        <c:param name = "gender" value = "${gender }"/>
+        <c:param name = "dob" value = "${dob }"/>
+		    <c:param name = "uname" value = "${username }"/>
+		    <c:param name = "pass" value = "${password }"/>
+		
+	
+    	</c:url>
+    	
+      <form id = "profilef" action = "directtouseraccount" method = "post">
+           <input type = "hidden" name = "id"  value = "${id }"/>
+          
+          
+      
       <nav id="mainav" class="fl_right"> 
         <!-- ################################################################################################ -->
        <ul class="clear">
@@ -134,10 +171,16 @@ Licence URI: https://www.os-templates.com/template-terms
           <li><a href="#">Portfolio</a></li>
           <li><a href="#">Contact Us</a></li>
           <li><a href="#">About Us</a></li>
+          <li><a href = "javascript:profilefjs()" >Profile</a></li>
           
         </ul>
         <!-- ################################################################################################ -->
       </nav>
+      
+      
+ </form>
+ 
+
     </header>
   </div>
   <!-- ################################################################################################ -->
@@ -195,7 +238,7 @@ Licence URI: https://www.os-templates.com/template-terms
     <section id="overview">
       <div class="sectiontitle">
         <p class="nospace font-xs"></p>
-        <p class="heading underline font-x2">Recomended Products</p>
+        <p class="heading underline font-x2">Recommended Products</p>
       </div>   
     </section>
 	
@@ -234,8 +277,10 @@ Licence URI: https://www.os-templates.com/template-terms
 	
 	
 	
-	
-	
+	<form id = "productfid" action = "directtoproduct" method = "post">
+           <input type = "hidden" name = "id"  value = "${id }"/>
+           <input type = "hidden" name = "productid"  value = "L0069"/>
+          
 	<div class="wraps">
 		<!--<img src="resources/assets/img/shadow.png" class="wrapshadow"> -->
 		<div class="grid">
@@ -243,18 +288,21 @@ Licence URI: https://www.os-templates.com/template-terms
 				<article class="post">
 				<div class="wrapgriditem">
 					<header class="post-header">
-					<h2 class="post-title"><a href="products.jsp">FESTOON LIGHTING</a></h2>
+					<h2 class="post-title"><a  href = "javascript:productjs()">FESTOON LIGHTING</a></h2>
+					
 					</header>
+					
 					<section class="post-excerpt">
 					<p>
-						10 Metres  <a class="read-more" href="product.jsp">&raquo;</a>
+						10 Metres  <a class="read-more" href = "javascript:productjs()">&raquo;</a>
 					</p>
 					</section>
 					<footer class="post-meta">
-					<a href="product.jsp"><img class="author-thumb" src="resources/images/demo/lighting.jpg" alt="David" nopin="nopin"/></a>
-					
+					<a href = "javascript:productjs()"><img class="author-thumb" src="resources/images/demo/lighting.jpg" alt="David" nopin="nopin"/></a>
+				
 					
 					</footer>
+					
 				</div>
 				</article>
 			</div>
@@ -426,7 +474,7 @@ Licence URI: https://www.os-templates.com/template-terms
 	
 	
 	
-	
+	</form>
 	
 	
 	

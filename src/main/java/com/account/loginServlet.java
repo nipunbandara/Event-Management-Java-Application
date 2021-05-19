@@ -33,7 +33,7 @@ public class loginServlet extends HttpServlet {
 			List<Customer> cusDetails = CustomerDBUtil.getCustomer(userName);
 			request.setAttribute("cusDetails", cusDetails);
 			
-			RequestDispatcher dis = request.getRequestDispatcher("customerAccount.jsp");
+			RequestDispatcher dis = request.getRequestDispatcher("loggedinindex.jsp");
 			dis.forward(request, response);
 			
 		} 

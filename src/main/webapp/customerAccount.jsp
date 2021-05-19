@@ -178,16 +178,10 @@
         
         </div>
         <div class = "p_details">
-       <div style = "font-weight: bold;">  <td >${cus.fname }</td> <td>${cus.lname }</td> </div>
-         <p style="font-size: small;"> <td>${cus.userName }</td></p>
+       <div style = "font-weight: bold;">  <c:out value = "${cus.fname}"/> <c:out value = "${cus.lname}"/> </div>
+         <p style="font-size: small;"> <c:out value = "${cus.userName}"/></p>
         </div>
-      <!-- ################################################################################################ -->
-    <!--
-          
-           id removed from form
-          email type changed to email
-          
-        -->
+      
 
 
 
@@ -228,7 +222,7 @@
             <input type = "text" name = "phone" pattern = "[0-9]{10}" value = "${cus.phone}"readonly><br>
   
             <label for="gender">Gender :</label>
-            <p name = "gender"><td>${cus.gender}</td></p>
+            <p><c:out value = "${cus.gender}"/></p>
             
             
   
@@ -297,14 +291,14 @@
 
         </div>
 
-    </div>
+   	 </div>
 	   
         
       
       
 	
 	
-</div>
+	</div>
 
 
 <p> 
