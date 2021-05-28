@@ -9,14 +9,7 @@
 	
     
 <!DOCTYPE html>
-<!--
-Template Name: Sislaf
-Author: <a href="https://www.os-templates.com/">OS Templates</a>
-Author URI: https://www.os-templates.com/
-Copyright: OS-Templates.com
-Licence: Free to use under our free template licence terms
-Licence URI: https://www.os-templates.com/template-terms
--->
+
 <html lang="">
 <!-- To declare your language - read more here: https://www.w3.org/International/questions/qa-html-language-declarations -->
 <head>
@@ -31,24 +24,11 @@ Licence URI: https://www.os-templates.com/template-terms
 
 </head>
 <body id="top">
-<!-- ################################################################################################ -->
-<!--
-          fname
-          lname
-           id removed from form
-          email type changed to email
-          gender
-          dob
-        add cancel submit button redirect to the user profile  page
-        -->
 
-<!-- ################################################################################################ -->
-<!-- ################################################################################################ -->
-<!-- Top Background Image Wrapper -->
 
 <div class="bgded overlay" > 
  
-  <!-- ################################################################################################ -->
+
   <div class="wrapper row0">
 
     <div id="topbar" class="hoc clear">
@@ -57,12 +37,10 @@ Licence URI: https://www.os-templates.com/template-terms
 		
       <div class="fl_left"> 
 	  
-        <!-- ################################################################################################ -->
-        	
-        <!-- ################################################################################################ -->
+      
       </div>
       <div class="fl_right"> 
-        <!-- ################################################################################################ -->
+      
 	
         <ul class="nospace">
           <li><a href="index.html"><i class="fas fa-home"></i></a></li>
@@ -81,7 +59,7 @@ Licence URI: https://www.os-templates.com/template-terms
             </div>
           </li>
         </ul>
-        <!-- ################################################################################################ -->
+     
       </div>
     </div>
   </div>
@@ -90,7 +68,7 @@ Licence URI: https://www.os-templates.com/template-terms
     <header id="header" class="hoc clear">
      
       <nav id="mainav" class="fl_right"> 
-        <!-- ################################################################################################ -->
+    
         <ul class="clear">
           <li class="active"><a href="index.html">Home</a></li>
           <li><a class="drop" href="#">Categories</a>
@@ -148,7 +126,7 @@ Licence URI: https://www.os-templates.com/template-terms
           <li><a href="#">Contact Us</a></li>
           <li><a href="#">About Us</a></li>
         </ul>
-        <!-- ################################################################################################ -->
+      
       </nav>
 	  
     </header>
@@ -188,7 +166,7 @@ Licence URI: https://www.os-templates.com/template-terms
 
     <div class="bgded overlay row4";">
       <footer id="footer" class="hoc clear"> 
-        <!-- ################################################################################################ -->
+   
         <div class="center btmspace-50">
           <ul class="faico clear">
             <li><a class="faicon-dribble" href="#"><i class="fab fa-dribbble"></i></a></li>
@@ -201,12 +179,11 @@ Licence URI: https://www.os-templates.com/template-terms
           <p class="nospace">© Copyright 2021   |  Event Management   |   All Rights Reserved
     </p>
         </div>
-        <!-- ################################################################################################ -->
+     
         <hr class="btmspace-50">
-        <!-- ################################################################################################ -->
-    
+     
         
-        <!-- ################################################################################################ -->
+     
       </footer>
     </div>
     

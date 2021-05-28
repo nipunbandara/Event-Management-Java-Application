@@ -12,6 +12,7 @@ function profilefjs(){
 					
 function loggedindex(){
 
-						document.getElementById("logindex").submit();
+						alert("Hello! I am an alert box!!");
+
 
 }

@@ -7,7 +7,7 @@
 <c:set var="uri" value="${req.requestURI}" />
 <c:set var="url">${req.requestURL}</c:set>
 
-<!-- ################################################################################################ -->
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -16,6 +16,7 @@
 <link href="resources/layout/styles/layout2.css" rel="stylesheet" type="text/css" media="all">
 <link rel = "stylesheet" href = "resources/css/userprofile_styles.css"/>
 <script src="resources/assets/js/acupdate.js"></script>
+<script src="resources/assets/js/prod.js"></script>
 
 <title>Profile</title>
 </head>
@@ -24,7 +25,7 @@
 
 <div class="bgded overlay" > 
  
-    <!-- ################################################################################################ -->
+   
     <div class="wrapper row0">
   
       <div id="topbar" class="hoc clear">
@@ -33,12 +34,12 @@
           
         <div class="fl_left"> 
         
-          <!-- ################################################################################################ -->
+        
               
-          <!-- ################################################################################################ -->
+         
         </div>
         <div class="fl_right"> 
-          <!-- ################################################################################################ -->
+      
       
           <ul class="nospace">
             <li><a href="index.html"><i class="fas fa-home"></i></a></li>
@@ -57,18 +58,63 @@
               </div>
             </li>
           </ul>
-          <!-- ################################################################################################ -->
+      
         </div>
       </div>
     </div>
+    
+           
+	<c:forEach var = "cus" items = "${cusDetails}">
+	
+	<c:set var = "id" value = "${cus.id}"/>
+	<c:set var = "fname" value = "${cus.fname}"/>
+ 	 <c:set var = "lname" value = "${cus.lname}"/>
+	<c:set var = "email" value = "${cus.email }"/>
+	<c:set var = "phone" value = "${cus.phone }"/>
+  <c:set var = "gender" value = "${cus.gender }"/>
+  <c:set var = "dob" value = "${cus.dob }"/>
+	<c:set var = "username" value = "${cus.userName }"/>
+	<c:set var = "password" value = "${cus.password }"/>
+    
+    </c:forEach>
+    
+  
+  <c:url value = "updateAccount.jsp" var = "cusupdate" >
+	
+		    <c:param name = "id" value = "${id }"/>
+		    <c:param name = "fname" value = "${fname }"/>
+        <c:param name = "lname" value = "${lname }"/>
+		    <c:param name = "email" value = "${email }"/>
+		    <c:param name = "phone" value = "${phone }"/>
+        <c:param name = "gender" value = "${gender }"/>
+        <c:param name = "dob" value = "${dob }"/>
+		    <c:param name = "uname" value = "${username }"/>
+		    <c:param name = "pass" value = "${password }"/>
+		
+   	</c:url>
+  
   
     <div class="wrapper row1">
       <header id="header" class="hoc clear">
        
+       <form id = "logindex" action = "login" method = "post">
+           <input type = "hidden" name = "id"  value = "${id }"/>
+           <input type = "hidden" name = "username"  value = "${username }"/>
+           <input type = "hidden" name = "password"  value = "${password }"/>
+          
+       
+       
         <nav id="mainav" class="fl_right"> 
-          <!-- ################################################################################################ -->
+       
           <ul class="clear">
-            <li class="active"><a href="index.html">Home</a></li>
+            <li class="active"><a href= "javascript:loggedindex()" >Home</a></li>
+            <script>function loggedindex(){
+
+            	document.getElementById("logindex").submit();
+
+
+}</script>
+            
             <li><a class="drop" href="#">Categories</a>
               <ul>
                 <li><a href="#">Photography</a></li>
@@ -124,8 +170,10 @@
             <li><a href="#">Contact Us</a></li>
             <li><a href="#">About Us</a></li>
           </ul>
-          <!-- ################################################################################################ -->
+        
         </nav>
+        
+        </form>
         
       </header>
     </div>
@@ -187,7 +235,7 @@
 
 
 
-<!-- ################################################################################################ -->
+
 <div class = "section">
 
     <br>
@@ -232,7 +280,7 @@
 
       
 
-        <!-- ################################################################################################ -->
+     
   
 
     </c:forEach>
@@ -253,7 +301,7 @@
     	</c:url>
 	
       
-        <!-- ################################################################################################ -->
+     
 	
         <div class = "buttondiv">
             <div class = "ca_buttondiv">
@@ -262,7 +310,7 @@
             </a>
             </div>
     
-         <!-- ################################################################################################ -->
+     
 	    
 
 	
@@ -280,7 +328,7 @@
         
 	     </c:url>
         
-         <!-- ################################################################################################ -->
+     
 
 
             <div class = "ca_buttondiv">
@@ -315,7 +363,7 @@
 
 <div class="bgded overlay row4";">
   <footer id="footer" class="hoc clear"> 
-    <!-- ################################################################################################ -->
+ 
     <div class="center btmspace-50">
       <ul class="faico clear">
         <li><a class="faicon-dribble" href="#"><i class="fab fa-dribbble"></i></a></li>
@@ -328,12 +376,12 @@
       <p class="nospace">© Copyright 2021   |  Event Management   |   All Rights Reserved
 </p>
     </div>
-    <!-- ################################################################################################ -->
+   
     <hr class="btmspace-50">
-    <!-- ################################################################################################ -->
+   
 
     
-    <!-- ################################################################################################ -->
+ 
   </footer>
 </div>
 
