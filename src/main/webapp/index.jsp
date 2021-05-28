@@ -135,7 +135,7 @@
   </div>
 
 </div>
-<!-- End Top Background Image Wrapper -->
+<!-- End Top Background Wrapper -->
 
 <div class="wrapper row3">
   <main class="hoc container clear"> 
