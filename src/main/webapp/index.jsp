@@ -202,7 +202,7 @@ Summer Style is characterized by a modern, laid-back, and minimalist aesthetic t
 	
 	
 	<div class="wraps">
-		<!--<img src="resources/assets/img/shadow.png" class="wrapshadow"> -->
+		
 		
 		<div class="grid">
 			<div class="grid-item">
